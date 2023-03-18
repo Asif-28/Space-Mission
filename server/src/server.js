@@ -3,7 +3,9 @@
 // app.listen();
 
 const http = require("http");
-const app = require("app");
+// use express app object as exported module and passs to create server
+
+const app = require("./app");
 const PORT = process.env.PORT || 8000;
 
 const server = http.createServer(app);
