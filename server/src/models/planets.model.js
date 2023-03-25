@@ -55,6 +55,7 @@ function loadPlanetData() {
         console.log(`${habitablePLanet.length} habital planets found `);
       });
     resolve();
+    // console.log("resolved");
   });
 }
 
