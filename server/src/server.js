@@ -11,8 +11,8 @@ const PORT = process.env.PORT || 8000;
 const MONGO_URL =
   "mongodb+srv://nasa-planets-api:gp0MeUBi7X77fXbc@nasa-api.vxgtufo.mongodb.net/?retryWrites=true&w=majority";
 const server = http.createServer(app);
-mongoose.connection.on("open", () => {
-  console.log("connected to mongoDb");
+mongoose.connection.once("open", () => {
+  console.log("connection ready to mongoDb");
 });
 mongoose.connection.on("error", (err) => {
   console.error(err);
@@ -22,8 +22,9 @@ async function startServer() {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
+
   await loadPlanetData();
-  console.log("done loading");
+
   server.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}...`);
   });
