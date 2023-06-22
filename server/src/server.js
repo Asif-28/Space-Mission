@@ -3,7 +3,7 @@
 // app.listen();
 
 const http = require("http");
-// use express app object as exported module and passs to create server
+// use express app object as exported module and pass to create server
 const mongoose = require("mongoose");
 const app = require("./app");
 const { loadPlanetData } = require("./models/planets.model");
@@ -19,8 +19,9 @@ mongoose.connection.on("error", (err) => {
 });
 async function startServer() {
   mongoose.connect(MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
+    // no need to write the above mongo now has the best possible driver options
   });
 
   await loadPlanetData();
