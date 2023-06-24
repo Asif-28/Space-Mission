@@ -1,3 +1,4 @@
+//planet schema for the list of all the planets
 const mongoose = require("mongoose");
 
 const planetSchema = new mongoose.Schema({
