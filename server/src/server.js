@@ -17,6 +17,7 @@ mongoose.connection.once("open", () => {
 mongoose.connection.on("error", (err) => {
   console.error(err);
 });
+//Mongo dB uses the bests possible connection drivers 
 async function startServer() {
   mongoose.connect(MONGO_URL, {
     // useNewUrlParser: true,
