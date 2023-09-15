@@ -19,11 +19,7 @@ mongoose.connection.on("error", (err) => {
 });
 //Mongo dB uses the bests possible connection drivers
 async function startServer() {
-  mongoose.connect(MONGO_URL, {
-    // useNewUrlParser: true,
-    // useUnifiedTopology: true,
-    // no need to write the above mongo now has the best possible driver options
-  });
+  mongoose.connect(MONGO_URL, {});
 
   await loadPlanetData();
 
