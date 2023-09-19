@@ -6,3 +6,8 @@ services:
       dockerfile: "./Dockerfile.prod"
     ports:
       - "8000:8000"
+    networks:
+      - "space_mission"
+
+networks:
+  space_mission:
